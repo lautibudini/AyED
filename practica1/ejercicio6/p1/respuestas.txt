@@ -1,0 +1,24 @@
+Análisis de las estructuras de listas provistas por la API de Java.
+
+
+a. ¿En qué casos ArrayList ofrece un mejor rendimiento que LinkedList?
+
+  Ofrecen mejor rendimiento cuando sabemos de antemano que habra una alta frecuencia en acceso aleatorio a datos en esa estructura, al ser como los arreglos 
+  poseen indices por lo cual es posible el tipo de acceso directo a un dato.
+
+
+b. ¿Cuándo LinkedList puede ser más eficiente que ArrayList?
+
+  Suele ser mas eficiente por ejemplo al momento de insertar o eliminar un elemento en el medio de la lista , ya que 
+  a diferencia de las arraylist no estan continuas en memoria y no necesita reorganizar los datos de memoria sino que cortar y unir enlaces.
+  
+  
+c. ¿Qué diferencia encuentra en el uso de la memoria en ArrayList y LinkedList?
+
+  las arraylist utilizan espacios de memoria contiguos para almacenar sus datos, lo cual puede favorecer en algunas situaciones y complicar en otras.
+  En las linked list, sus nodos estan dispersos en memoria y los une una refrencia guardada en el mismo nodo referenciado el nodo ant y sig.
+  
+d. ¿En qué casos sería preferible usar un ArrayList o un LinkedList?
+
+  las LinkedList se utiliza mas cuando hay inserciones y eliminacion frecuente  de datos en una lista, y usamos las ArrayList cuando necesitamos un 
+  acceso rapido a una posicion especifica, y operaciones de lectura.   
