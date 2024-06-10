@@ -54,5 +54,6 @@ public class pruebas{
         System.out.println("los numeros impares mayores que 10 son en pre : " + recorridos.numerosImparesMayoresQuePreOrden(a,10).toString() );
         System.out.println("los numeros impares mayores que 10 son en in : " + recorridos.numerosImparesMayoresQueInOrden(a,10).toString() );
         System.out.println("los numeros impares mayores que 10 son en post : " + recorridos.numerosImparesMayoresQuePostOrden(a,10).toString() );
+        System.out.println("los numeros impares mayores que 10 son en Niveles : " + recorridos.numerosImparesMayoresQuePorNiveles(a,10).toString() );
 	}
 }

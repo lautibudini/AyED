@@ -2,7 +2,7 @@ package ejercicio2p3;
 
 import ejercicio1p3.GeneralTree;
 import java.util.*; 
-
+import ejercicio8.p1.Queue;
 
 public class RecorridosAG{
 	
@@ -85,4 +85,43 @@ public class RecorridosAG{
 			
 		}
 	}
+	
+	
+	public List<Integer> numerosImparesMayoresQuePorNiveles(GeneralTree <Integer> a,Integer n){
+		// Como no necesito saber los distintos niveles, solo encolo por niveles, sin separacion. 
+		
+		Queue<GeneralTree<Integer>> cola = new Queue<GeneralTree<Integer>>();
+		LinkedList<Integer> lista = new LinkedList<Integer>(); 
+		GeneralTree<Integer> actual; 
+		
+		
+		// Debo preguntar en el main si no es vacio 
+		cola.enqueue(a); //encolo el nodo del arbol 
+		
+		while (!cola.isEmpty()) {
+			
+			// Me guardo el dato nodo en actual.
+			actual = cola.dequeue();
+			
+			// Me fijo si el dato del nodo cumple con lo pedidio para agregarlo a la lista 
+			if (actual.getData() > n && actual.getData()%2 !=0) {
+				lista.add(actual.getData()); 
+			}
+			
+			if (actual.hasChildren()) 
+			   {
+				List<GeneralTree<Integer>> hijos = actual.getChildren(); 
+				for(GeneralTree<Integer> hijo : hijos) 
+				{
+					cola.enqueue(hijo);
+				}
+				
+			
+			   }
+				
+		}
+		
+		return lista; 
+	}
+
 }
