@@ -27,9 +27,10 @@ public class ejercicio5 {
         ProfundidadArbolBinario prof = new ProfundidadArbolBinario();
         
         prof.setArbol(catorce);
+        
+        
         System.out.println("La suma del nivel 0 es: "+prof.SumaElementosProfundidad(0));
         System.out.println("La suma del nivel 1 es: "+prof.SumaElementosProfundidad(1));
         System.out.println("La suma del nivel 2 es: "+prof.SumaElementosProfundidad(2));
-        //System.out.println("La suma del nivel 3 es: "+prof.SumaElementosProfundidad(3));
     }
 }

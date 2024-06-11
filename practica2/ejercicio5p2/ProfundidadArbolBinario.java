@@ -10,39 +10,60 @@ public class ProfundidadArbolBinario{
 		this.arbol = data; 
 	}
 	
+	
 	public int SumaElementosProfundidad(int n) {
-		int suma = 0; 
-		int nivel = -1;
-		
 		Queue <BinaryTree<Integer>> cola = new Queue<BinaryTree<Integer>>();
-		BinaryTree<Integer> arbolito; 
+		BinaryTree<Integer> aux;
+		int suma = 0;
+		int nivel_act = 0; 
+		boolean seguir = true; 
+		cola.enqueue(arbol);
+		cola.enqueue(null);
 		
-		cola.enqueue(null); //encolamos null para que entre con un dato null y sepamos que es el nivel cero 
-		cola.enqueue(arbol);//encolamos la raiz 
-		
-		
-		// mientras tenga elementos y no llegue al nivel itero.
-		while (!cola.isEmpty() && nivel <= n)  {
-			arbolito  = cola.dequeue();
-			//si no termine o no empiezo un nivel
-			if (arbolito != null) {
-			    suma+= arbolito.getData();
-				if(arbolito.hasLeftChild()) {
-					cola.enqueue(arbolito.getLeftChild());
+		while( (!cola.isEmpty()) && seguir) { 
+			aux = cola.dequeue();
+			if(aux == null) {
+				if(!cola.isEmpty()) {
+					nivel_act ++;
+					if (nivel_act> n) { //Si ya pase el nivel , es xq lo procese entonces corto la iteracion.
+						seguir = false;
+					}
+					cola.enqueue(null);
 				}
-                if (arbolito.hasRightChild()) {
-            	    cola.enqueue(arbolito.getRightChild());
-            }
-	        // si es null , me fijo si todavia tengo elementos en la cola para seguir sumando.
-			}else if (!cola.isEmpty()){
-				// encolar un null ya que estamos en otro nivel.
-				cola.enqueue(null);
-				nivel++; 
 			}
+			else {
+				if (nivel_act == n) {           // Si estoy en el nivel pedidio sumo los valores del mismo.
+					suma += aux.getData();
+				}
+				if(aux.hasLeftChild()) {
+					cola.enqueue(aux.getLeftChild());
+				}
+                if (aux.hasRightChild()) {
+            	    cola.enqueue(aux.getRightChild());
+				}	
+			
 		}
 		
+		}
 		
-		return suma;
+		return suma; 
+		
+		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
