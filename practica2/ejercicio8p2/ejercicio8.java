@@ -3,7 +3,8 @@ import tp2.ejercicio1.*;
 
 public class ejercicio8{
 	
-	public boolean esPrefijo(BinaryTree<Integer> arbol1, BinaryTree<Integer> arbol2) {
+	/* Una solucion : 
+	 * public boolean esPrefijo(BinaryTree<Integer> arbol1, BinaryTree<Integer> arbol2) {
        
 		// Mi idea es ir recorriendo nodo por nodo viendo si son iguales.
 	   // algun momento difieren retorna falso, sino corta cuando no tenga mas nodos en el arbol 1
@@ -30,8 +31,46 @@ public class ejercicio8{
         }
         return res;
 	
+	}*/
+	
+	public boolean esPrefijo(BinaryTree<Integer> arbol1, BinaryTree<Integer> arbol2) {
+		
+		if (arbol1 == null || arbol1.isEmpty() || arbol1 == null || arbol1.isEmpty()) {
+			return false;
+		}else {
+		return HelperEsPrefijo(arbol1,arbol2);	
+		}
+		
 	}
 	
+	private boolean HelperEsPrefijo(BinaryTree<Integer> arbol1, BinaryTree<Integer> arbol2) {
+		boolean res = true; // Por defecto siempre se crea en verdadero en lass recursiones
+		BinaryTree<Integer> nodo1; 
+		BinaryTree<Integer> nodo2; 
+		nodo1= arbol1; 
+		nodo2= arbol2; 
+		if (nodo1.getData() != nodo2.getData()) {  // Si los datos no coinciden y no cumple y retorna false.
+			return false; 
+		}
+		if(nodo1.hasLeftChild()) {
+            if(nodo2.hasLeftChild()) {
+            	// ya que cumple con tener hijo, llamo a la recursion 
+                res =HelperEsPrefijo(nodo1.getLeftChild(), nodo2.getLeftChild()); 
+            } 
+            else{
+            	return false;} // ya que el arbol1 tiene hijo y arbol2 no, no son iguales y retorna false
+        }
+		// Lo mismo con el derecho
+		if(nodo1.hasRightChild()) {
+            if(nodo2.hasRightChild()) {
+                res =HelperEsPrefijo(nodo1.getRightChild(), nodo2.getRightChild()); 
+            } 
+            else{
+            	return false;}
+        }
+		// Res por defecto retorna true, si en algun momento no cumple. Toma el valor de false q se retorno en alguna iteracion.
+		return res; 
+	}
 	
 	
       public static void main (String[] args) {
@@ -89,7 +128,8 @@ public class ejercicio8{
         // programa 
         ejercicio8 e = new ejercicio8();
         
-        System.out.println(" el arbol 1 es pre-fijo del arbol dos : " +  e.esPrefijo(arbol1, arbol2) );
+        System.out.println(" el arbol 1 es pre-fijo del arbol 2 : " +  e.esPrefijo(arbol1, arbol2) ); // tiene que dar true
+        System.out.println(" el arbol 2 es pre-fijo del arbol 1 : " +  e.esPrefijo(arbol2, arbol1) ); // Tiene que dar false
         
         
         
