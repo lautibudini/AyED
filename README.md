@@ -29,7 +29,7 @@
    >
    > [Heap](/ejercitacion%20teorica/Heap)
    > 
-   > [Analisis De Algoritmos](/ejercitacion%20teorica/Analisis%20de%20alg)
+   > [Analisis De Algoritmos](/ejercitacion%20teorica/analisis%20de%20alg)
    >
    > [Grafos](/ejercitacion%20teorica/Grafos)
   
