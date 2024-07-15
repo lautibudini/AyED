@@ -27,9 +27,9 @@
 - 📑​ Ejercitación Teorica.
    > [Arboles G,B,E](/ejercitacion%20teorica/Arboles%20b%2Ce%2Cg)
    >
-   > [Heap]
+   > [Heap](/ejercitacion%20teorica/Heap)
    > 
-   > [Analisis De Algoritmos](/ejercitacion%20teorica/analisis%20de%20alg)
+   > [Analisis De Algoritmos](/ejercitacion%20teorica/Analisis%20de%20alg)
    >
    > [Grafos](/ejercitacion%20teorica/Grafos)
   
