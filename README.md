@@ -29,8 +29,8 @@
    >
    > [Heap]
    > 
-   > [Analisis De Algoritmos]
+   > [Analisis De Algoritmos](/ejercitacion%20teorica/analisis%20de%20alg)
    >
-   > [Grafos]
+   > [Grafos](/ejercitacion%20teorica/Grafos)
   
   
